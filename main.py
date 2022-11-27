@@ -1,7 +1,8 @@
 import string
 import random
 
-def generate():
+
+def generate(passlen):
     s1= string.ascii_uppercase
     s2=string.ascii_lowercase
     s3= string.digits
@@ -14,6 +15,7 @@ def generate():
     s.extend(list(s4))
     #shuffle the entire list
     random.shuffle(s)
-    #only print s from 0 to 8 (8 being the maximum value of the password)
-    return "".join(s[0:8])
-print (generate())
+    #only print s from 8 ro passlen
+    return "".join(s[0:passlen])
+passlen = int(input("Please enter password length:"))
+print (generate(passlen))
